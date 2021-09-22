@@ -1,6 +1,6 @@
 package leetcode;
 
-public class ReversePairs {
+public class ReversePairs { // 小和问题
     public static void main(String[] args){
         int[] a = {7,5,6,4};
         System.out.println(mergeSort(a));

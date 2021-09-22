@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class RadixSort {
+public class RadixSort { // 基数排序 桶排序
     public static void main(String[] args){
         int[] a = {234,101,4021,334,72,5,646,21,23};
         radixSort(a,0,a.length - 1,maxSize(a));

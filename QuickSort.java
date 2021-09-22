@@ -2,7 +2,7 @@ package leetcode;
 
 public class QuickSort {
     public static void main(String[] args){
-        int[] a = {2,4,1,3,3,5,6,8,7,};
+        int[] a = {2,1,3,4,1,5,6};
         quickSort(a,0,a.length - 1);
         for(int t : a){
             System.out.println(t);
