@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.linkList;
 
 public class CopyListWithRandomPointer {
 

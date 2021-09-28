@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.linkList;
 
 public class PalindromeLinkList { // 判断链表是否为回文链表
 

@@ -1,6 +1,4 @@
-package leetcode;
-
-import java.util.Arrays;
+package leetcode.digitalProblem;
 
 public class SingleNumber {
     public static void main(String[] args){

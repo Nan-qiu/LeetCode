@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.digitalProblem;
 
 public class MinSteps {
     public static void main(String[] args){

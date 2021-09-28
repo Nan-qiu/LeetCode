@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.digitalProblem;
 
 public class Nim_game {
     public static void main(String[] args){

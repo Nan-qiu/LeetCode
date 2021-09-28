@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.linkList;
 
 import java.util.PriorityQueue;
 
