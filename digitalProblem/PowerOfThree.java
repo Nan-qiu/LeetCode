@@ -15,6 +15,7 @@ public class PowerOfThree {
 
     public static boolean isPowerOfTwo(int n){
         return n > 0 && 1073741824 % n == 0;
+        //return n>0&&(n&(n-1))==0;
     }
 
     public static boolean isPowerOfThree(int n){
@@ -22,7 +23,7 @@ public class PowerOfThree {
     }
 
     public static boolean isPowerOfFour(int n){
-        return n > 0 && 1073741824 % n == 0;
-    }//错
+        return (n & (n - 1)) == 0 && (n & 0x55555555) != 0;
+    }
 
 }
