@@ -1,4 +1,4 @@
-package leetcode.linkList;
+package leetcode.digitalProblem;
 
 import java.util.PriorityQueue;
 

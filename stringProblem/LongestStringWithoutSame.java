@@ -13,7 +13,7 @@ public class LongestStringWithoutSame {//https://leetcode-cn.com/problems/wtcaE1
         int i = 0;
         HashSet<Character> set = new HashSet<>();
         for(int k = 0; k < s.length(); k++){
-            while (set.contains(s.charAt(k))) {
+            while (set.contains(s.charAt(k))) { // 滑动窗口
                 set.remove(s.charAt(i++));
                 res = Math.max(res,set.size());
             }

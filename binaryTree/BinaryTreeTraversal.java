@@ -9,7 +9,7 @@ public class BinaryTreeTraversal {
     }
 
     public static List<Integer> preOrderTraversal(TreeNode root){ //先序遍历  准备一个栈，先把头节点放栈里
-        List<Integer> list = new ArrayList<>();             // 当栈不为空，弹出一个元素，把当前节点的右孩子先放进去，再放左孩子，如果存在的话
+        List<Integer> list = new ArrayList<>();                   // 当栈不为空，弹出一个元素，把当前节点的右孩子先放进去，再放左孩子，如果存在的话
         if (root != null){
             Stack<TreeNode> stack = new Stack<>();
             stack.push(root);
@@ -26,7 +26,7 @@ public class BinaryTreeTraversal {
 
     public static List<Integer> inorderTraversal(TreeNode root){// 中序遍历 ，当栈不为空或root不为空时，进入循环
         List<Integer> list = new ArrayList<>();                 // 先把当前节点的左边界全部放到栈里，root==null时，弹出一个节点，root=root的右子树
-        Stack<TreeNode> stack = new Stack<>();                  // 在右子树上再把右边界放栈，循环
+        Stack<TreeNode> stack = new Stack<>();                  // 在右子树上再把左边界放栈，循环
         if (root != null){
             while (!stack.isEmpty() || root != null) {
                 if (root != null){
@@ -43,8 +43,8 @@ public class BinaryTreeTraversal {
     }
 
     public static List<Integer> posOrderTraversal(TreeNode root){//后序遍历 准备两个栈，stack 和 help，先把头节点放stack里
-        List<Integer> list = new ArrayList<>();       //当栈不为空，弹出一个元素，再把弹出的元素放在help里
-        Stack<TreeNode> stack = new Stack<>();              //最后把help里的弹出，把val加入list
+        List<Integer> list = new ArrayList<>();                 //当栈不为空，弹出一个元素，再把弹出的元素放在help里
+        Stack<TreeNode> stack = new Stack<>();                  //最后把help里的弹出，把val加入list
         Stack<TreeNode> help = new Stack<>();
         if (root != null){
             stack.push(root);

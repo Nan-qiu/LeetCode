@@ -82,3 +82,48 @@ public class TrieTree { // 前缀树
     }
 
 }
+
+class Trie { //leetcode teach me! better but simple
+    private Trie[] children;
+    private boolean isEnd;
+
+    public Trie(){
+        children = new Trie[26];
+        isEnd = false;
+    }
+
+    public void insert(String word){
+        Trie node = this;
+        for(int i = 0; i < word.length(); i++){
+            char ch = word.charAt(i);
+            int index = ch - 'a';
+            if (node.children[index] == null){
+                node.children[index] = new Trie();
+            }
+            node = node.children[index];
+        }
+        node.isEnd = true;
+    }
+
+    public boolean search(String word){
+        Trie node = searchPrefix(word);
+        return node != null && node.isEnd;
+    }
+
+    public boolean startsWith(String prefix){
+        return searchPrefix(prefix) != null;// 若prefix在Trie树里能走完，就是返回的不是空，就说明prefix是某个word的前缀
+    }
+
+    private Trie searchPrefix(String prefix){ // 查prefix是否为某个word的前缀，返回的是prefix最后一个字母的节点
+        Trie node = this;
+        for(int i = 0; i < prefix.length(); i++){
+            char ch = prefix.charAt(i);
+            int index = ch - 'a';
+            if (node.children[index] == null){
+                return null;
+            }
+            node = node.children[index];
+        }
+        return node;
+    }
+}
