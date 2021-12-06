@@ -5,9 +5,9 @@ public class PowerOfThree {
         int a = 0;
         int m = 0;
         for(int i = 0; i < 1000; i++){
-            a = (int) Math.pow(4,i);
+            a = (int) Math.pow(2,i);
             m = i;
-            if ((int) Math.pow(4,i + 1) == Integer.MAX_VALUE) break;
+            if ((int) Math.pow(2,i + 1) == Integer.MAX_VALUE) break;
         }
         System.out.println(a);
         System.out.println(m);
