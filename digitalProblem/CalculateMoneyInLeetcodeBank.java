@@ -11,15 +11,15 @@ public class CalculateMoneyInLeetcodeBank {
         int left = n % 7 - 1;
         if (week == 0) return table[left];
         else{
-            int res=0;
-            if (week-2>=0){
-                int count=1;
-                for(int i = 0; i < week-1; i++){
-                    res+=count++;
+            int res = 0;
+            if (week - 2 >= 0){
+                int count = 1;
+                for(int i = 0; i < week - 1; i++){
+                    res += count++;
                 }
             }
-            if (left>=0) return 28 * week +res * 7 + week * (left + 1) + table[left];
-            else return 28 * week +res * 7;
+            if (left >= 0) return 28 * week + res * 7 + week * (left + 1) + table[left];
+            else return 28 * week + res * 7;
         }
     }
 }
