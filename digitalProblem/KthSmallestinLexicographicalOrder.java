@@ -17,6 +17,7 @@ public class KthSmallestinLexicographicalOrder {
         return cur;
     }
 
+    //找当前节点下一共有多少个节点
     private int getCount(long n,long cur){
         long next = cur + 1;
         long total = 0;

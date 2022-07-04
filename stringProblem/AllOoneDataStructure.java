@@ -29,7 +29,7 @@ public class AllOoneDataStructure {
             String key;
             int val;
 
-            Node(String key,int val){
+            Node(String key, int val){
                 this.pre = null;
                 this.next = null;
                 this.key = key;
@@ -41,8 +41,8 @@ public class AllOoneDataStructure {
         HashMap<String, Node> map;
 
         public AllOne(){
-            this.head = new Node(null,-1);
-            this.tail = new Node(null,100000);
+            this.head = new Node(null, -1);
+            this.tail = new Node(null, 100000);
             head.next = tail;
             tail.pre = head;
             this.map = new HashMap<>();
@@ -65,13 +65,13 @@ public class AllOoneDataStructure {
                 }
             } else{
                 //不存在
-                Node newNode = new Node(key,1);
+                Node newNode = new Node(key, 1);
                 Node next = head.next;
                 next.pre = newNode;
                 newNode.next = next;
                 head.next = newNode;
                 newNode.pre = head;
-                map.put(key,newNode);
+                map.put(key, newNode);
             }
         }
 
@@ -85,12 +85,12 @@ public class AllOoneDataStructure {
                 curNode.val--;
                 while (curNode.val < curNode.pre.val) {
                     Node node = curNode.pre;
-                    node.next=curNode.next;
-                    curNode.next=node;
-                    curNode.pre=node.pre;
-                    node.pre=curNode;
-                    node.next.pre=node;
-                    curNode.pre.next=curNode;
+                    node.next = curNode.next;
+                    curNode.next = node;
+                    curNode.pre = node.pre;
+                    node.pre = curNode;
+                    node.next.pre = node;
+                    curNode.pre.next = curNode;
                 }
             }
 

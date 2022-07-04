@@ -2,7 +2,7 @@ package leetcode.sort;
 
 public class MergeSort {
     public static void main(String[] args){
-        int[] a = {2,3,6,1,9,3,5,12,5};
+        int[] a = {2, 3, 6, 1, 9, 3, 5, 12, 5};
         mergeSort(a);
         for(int q : a){
             System.out.println(q);
@@ -13,20 +13,20 @@ public class MergeSort {
         if (arr == null || arr.length < 2){
             return;
         }
-        process(arr,0,arr.length - 1);
+        process(arr, 0, arr.length - 1);
     }
 
-    public static void process(int[] arr,int L,int R){
+    public static void process(int[] arr, int L, int R){
         if (L == R){
             return;
         }
         int mid = L + ((R - L) >> 1);
-        process(arr,L,mid);
-        process(arr,mid + 1,R);
-        merge(arr,L,mid,R);
+        process(arr, L, mid);
+        process(arr, mid + 1, R);
+        merge(arr, L, mid, R);
     }
 
-    public static void merge(int[] arr,int L,int M,int R){
+    public static void merge(int[] arr, int L, int M, int R){
         int[] help = new int[R - L + 1];
         int i = 0;
         int p1 = L;

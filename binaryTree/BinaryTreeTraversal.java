@@ -5,7 +5,8 @@ import java.util.*;
 public class BinaryTreeTraversal {
 
     public static void main(String[] args){
-        TreeNode s = new TreeNode(1,new TreeNode(4,new TreeNode(5,null,null),null),new TreeNode(2,new TreeNode(3,null,null),null));
+        TreeNode s = new TreeNode(1, new TreeNode(4, new TreeNode(5, null, null), null), new TreeNode(2, new TreeNode(3, null, null), null));
+        System.out.println(inorderTraversal2(s));
     }
 
     public static List<Integer> preOrderTraversal(TreeNode root){ //先序遍历  准备一个栈，先把头节点放栈里
@@ -21,7 +22,21 @@ public class BinaryTreeTraversal {
             }
         }
         return list;
+    }
 
+    public static List<Integer> preOrderTraversal2(TreeNode root){
+        ArrayList<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                res.add(root.val);
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            root = root.right;
+        }
+        return res;
     }
 
     public static List<Integer> inorderTraversal(TreeNode root){// 中序遍历 ，当栈不为空或root不为空时，进入循环
@@ -42,6 +57,22 @@ public class BinaryTreeTraversal {
         return list;
     }
 
+    public static List<Integer> inorderTraversal2(TreeNode root){
+        ArrayList<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            res.add(root.val);
+            root = root.right;
+        }
+        return res;
+    }
+
+
     public static List<Integer> posOrderTraversal(TreeNode root){//后序遍历 准备两个栈，stack 和 help，先把头节点放stack里
         List<Integer> list = new ArrayList<>();                 //当栈不为空，弹出一个元素，再把弹出的元素放在help里
         Stack<TreeNode> stack = new Stack<>();                  //最后把help里的弹出，把val加入list
@@ -60,6 +91,24 @@ public class BinaryTreeTraversal {
             list.add(n);
         }
         return list;
+    }
+
+
+    public static List<Integer> posOrderTraversal2(TreeNode root){
+        ArrayList<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                res.add(root.val);
+                stack.push(root);
+                root = root.right;
+            }
+            root = stack.pop();
+            root = root.left;
+        }
+        //反转
+        Collections.reverse(res);
+        return res;
     }
 
     public static List<Integer> LevelTraversal(TreeNode root){//层次遍历 从上到下，从左到右
@@ -90,7 +139,7 @@ public class BinaryTreeTraversal {
             this.val = val;
         }
 
-        TreeNode(int val,TreeNode left,TreeNode right){
+        TreeNode(int val, TreeNode left, TreeNode right){
             this.val = val;
             this.left = left;
             this.right = right;
